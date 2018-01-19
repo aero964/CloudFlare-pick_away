@@ -22,7 +22,7 @@ function purge($imgurls){
 	//2秒待機
 	//※この処理をしないとオリジンサーバ側の画像が削除される前にパージされることになり，画像が残ってしまいます。
 	sleep(2);
-	//与えられたURL(imgurls変数)をJSONに整形
+	//与えられたURL($imgurls)をJSONに整形
 
 	//オリジンサーバ側
 	$ZONEID 	= "【ゾーンＩＤ】";
@@ -89,4 +89,5 @@ EOM;
 	//$export = $curfile .PHP_EOL. $out;
 	//file_put_contents('./dump.txt', $export);
 
+//nohupで実行しているため確実に終了させる
 exit();
