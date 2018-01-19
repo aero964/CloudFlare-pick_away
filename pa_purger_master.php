@@ -12,11 +12,11 @@
 **/
 
 
-$p1 = array("https://【URL】/dummyfile");
+$p1 = array("https://someurl/dummyfile");
 
 foreach ($arrayID as $imageIDs) {
 
-	$imageIDs = "https://【URL】/".$imageIDs;
+	$imageIDs = "https://someurl/".$imageIDs;
 
 	array_push(
 		$p1,
@@ -37,4 +37,4 @@ foreach ($arrayID as $imageIDs) {
 $p1	= json_encode(array("files"=>$p1), JSON_UNESCAPED_SLASHES);
 
 
-exec("nohup php -c '' '【絶対パスでこのプログラムの場所を指定】/pa_purger_substitute.php' '".$p1."' > /dev/null &");
+exec("nohup php -c '' '/path/to/pa_purger_substitute.php' '".$p1."' > /dev/null &");
