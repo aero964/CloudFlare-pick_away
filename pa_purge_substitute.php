@@ -43,14 +43,14 @@ function purge($imgurls){
 	      'X-Auth-Key: '.$API,
 	      'X-Auth-Email: '.$MAIL,
 	),
-	//Method
+	//CURL Method -> 削除なので"DELETE"
 	CURLOPT_CUSTOMREQUEST => "DELETE",//DELETE
-	//body
+	//CURL POSTFIELDS -> 削除するURL内容
 	CURLOPT_POSTFIELDS => $imgurls[0]
 	);
 	//set options
 	curl_setopt_array($curl, $options);
-	// request
+	//request
 	$result = curl_exec($curl);
 
 	//処理データのロギング
@@ -60,7 +60,7 @@ function purge($imgurls){
 	date_default_timezone_set('Asia/Tokyo');
 
 	//ログの形式を指定。
-	$logdate	= date( "Y年m月d日 H時i分s秒" );
+	$logdate	= date( "Y-m-d H:i:s" );
 	$current 	= file_get_contents($file);
 	
 	$time 		= microtime(true) - $time_start;
@@ -86,10 +86,6 @@ EOM;
 
 	$out = ob_get_contents();
 	ob_end_clean();
-
-	//$curfile = file_get_contents('./dump.txt');
-	//$export = $curfile .PHP_EOL. $out;
-	//file_put_contents('./dump.txt', $export);
 
 //nohupで実行しているため確実に終了させる
 exit();
