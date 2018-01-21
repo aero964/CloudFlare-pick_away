@@ -7,6 +7,8 @@
 * このプログラムは，アップロードされたデータのキャッシュを削除するプログラムです。
 * pa_purger_master.phpによって呼び出されます。
 
+* @param $imageurls str
+
 **/
 
 if ($argv[1] == false){
