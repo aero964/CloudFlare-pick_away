@@ -8,8 +8,6 @@ pa_purger_master.phpで受け取ったURL一覧の配列はpa_purger_substitute.
 
 
 ## Functions
-CloudFlareのAPIを使用し，パージ対象のファイル(URL)をjson形式でdeleteリクエスト(curl)を送る仕組みとなっています。
-
-APIキーなどパラメタはご使用の環境に応じて適宜変更をお願いします。
-
-パージされた結果はログファイルに書き出されます。
+ - CloudFlareのAPIを使用し，パージ対象のファイル(URL)をjson形式でdeleteリクエスト(curl)を送る仕組みとなっています。
+ - APIキーなどパラメタはご使用の環境に応じて適宜変更をお願いします。
+ - パージされた結果はログファイルに書き出されます。
