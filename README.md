@@ -1,4 +1,4 @@
-# pick_away
+# CloudFlare-pick_away
 CloudFlareにキャッシュされたファイルを個別でパージするPHPアプリケーションです。
 
 ## Features
